@@ -22,7 +22,7 @@ const DropdownMenus = () => {
         <div className="flex">
           {/* Sidebar */}
           <div
-            className={`bg-purple-300 text-white fixed h-screen rounded-lg transition-all duration-300 z-10
+            className={`bg-blue-300 text-white fixed h-screen rounded-lg transition-all duration-300 z-10
               ${sidebarVisible ? 'w-64' : 'w-0'}`}
               style={{ overflow: sidebarVisible ? 'auto' : 'hidden' }}>
             
@@ -64,7 +64,7 @@ const DropdownMenus = () => {
             {/* Button to toggle sidebar */}
             <div className="ml-auto">
               <button
-                className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 onClick={() => setSidebarVisible(!sidebarVisible)}>
                 {/* Toggle icon based on sidebarVisible state */}
                 {sidebarVisible ? (
