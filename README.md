@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, clone the repo into a local folder and run:
+First, [clone the repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) into a local folder and run:
 
 ```
 npm i
