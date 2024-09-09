@@ -5,7 +5,7 @@ import SysAdminDropdown from './sys-admin-dropdown';
 import Image from "next/image";
 
 const DropdownMenus = () => {
-    const [sidebarVisible, setSidebarVisible] = useState(true);
+    const [sidebarVisible, setSidebarVisible] = useState(false);
     const [requestsDropdownOpen, setRequestsDropdownOpen] = useState(false);
     const [sysAdminDropdownOpen, setSysAdminDropdownOpen] = useState(false);
 
