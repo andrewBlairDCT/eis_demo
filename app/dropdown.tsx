@@ -31,12 +31,28 @@ const DropdownMenus = () => {
                 <Image
                   className="dark:invert"
                   src="/logo.png"
-                  alt="Next.js logo"
+                  alt="DC Thomson logo"
                   width={180}
                   height={40}
                   priority
                 />
                 <br />
+              </div>
+              <div className="mt-4">
+              <a
+                  href="/dashboard"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-800 rounded-lg"
+                  onClick={() => closeDropdown(setRequestsDropdownOpen)}
+              >
+                   <Image
+                  className="dark:invert"
+                  src="/home.png"
+                  alt="Home Button"
+                  width={40}
+                  height={40}
+                  priority
+                />
+              </a>
               </div>
               <div className="mt-4">
                 <RequestsDropdown
