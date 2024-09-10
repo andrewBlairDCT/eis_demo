@@ -1,4 +1,6 @@
 import React, {useRef, useEffect} from 'react';
+import Link from 'next/link';
+
 
 const SysAdminDropdown = ({toggleDropdown, closeDropdown, sysAdminDropdownOpen, setSysAdminDropdownOpen}) => {
     
@@ -35,39 +37,39 @@ const SysAdminDropdown = ({toggleDropdown, closeDropdown, sysAdminDropdownOpen, 
                     <div className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-44 z-50 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <ul role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                             <li>
-                                <a
+                                <Link
                                     href="/dashboard/sysAdmin"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setSysAdminDropdownOpen)}
                                 >
                                     Companies
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/dashboard/sysAdmin"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setSysAdminDropdownOpen)}
                                 >Contact Types
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/dashboard/sysAdmin"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setSysAdminDropdownOpen)}
                                 >
                                     Editions
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/dashboard/sysAdmin"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setSysAdminDropdownOpen)}
                                 >
                                    Offices
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

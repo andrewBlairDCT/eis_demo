@@ -1,4 +1,5 @@
 import React, {useRef, useEffect} from 'react';
+import Link from 'next/link';
 
 const RequestsDropdown = ({toggleDropdown, closeDropdown, requestsDropdownOpen, setRequestsDropdownOpen}) => {
     
@@ -36,39 +37,39 @@ const RequestsDropdown = ({toggleDropdown, closeDropdown, requestsDropdownOpen, 
 
                         <ul role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                             <li>
-                                <a
+                                <Link
                                     href="/dashboard/requests"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setRequestsDropdownOpen)}
                                 >
                                     Create New Request
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/dashboard/requests"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setRequestsDropdownOpen)}
                                 >My Requests
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/dashboard/requests"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setRequestsDropdownOpen)}
                                 >
                                     My Team Requests
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/dashboard/requests"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => closeDropdown(setRequestsDropdownOpen)}
                                 >
                                     My Draft Requests
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
