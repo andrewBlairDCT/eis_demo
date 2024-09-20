@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div >
-      <main className="flex min-h-screen flex-col p-6 bg-white bg-opacity-70" >    
+      <main className="flex min-h-screen flex-col p-6" >    
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <Image
         className="dark:invert"

@@ -38,7 +38,7 @@ export default function RootLayout({
       <div className="z-1" style={styling}></div>  
         <DropdownMenus />
       </div>
-      <div className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
+      <div style={{zIndex: 10}} className="flex-grow p-6 md:overflow-y-auto md:p-12">{children}</div>
     </div>
       </body>
     </html>
