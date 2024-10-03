@@ -1,6 +1,7 @@
 "use client";
 
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { log } from "console";
 import { Fragment, useState, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -45,16 +46,39 @@ const Upload = () => {
     }
     try {
       const uploadPromises = files.map(async (file) => {
-        const ext = file.name.split(".").at(-1);
+        // const ext = file.name.split(".").at(-1);
         const uid = uuidv4().replace(/-/g, "");
-        const fileName = `${uid}${ext ? "." + ext : ""}`;
-
+        const fileName = `${uid}-${file.name}`;
+     
         const uploadToS3 = new PutObjectCommand({
           Bucket,
           Key: fileName,
           Body: file,
         });
         await s3.send(uploadToS3);
+
+        const fileUrl = `https://${Bucket}.s3.${process.env.NEXT_PUBLIC_AWS_REGION}.amazonaws.com/${fileName}`;
+        const originalFileName = file.name
+        const last_modified = file.lastModified
+        const type = file.type
+
+        const response = await fetch("http://localhost:8000/api/s3-webhook/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            file_name: fileName,
+            file_url: fileUrl,
+            original_file_name: originalFileName,
+            date_last_modified: new Date(last_modified).toISOString(),
+            file_type: type
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Uploaded to S3 but failed to send file data to Django");
+        }
       });
 
       await Promise.all(uploadPromises);
@@ -65,6 +89,16 @@ const Upload = () => {
     }
   };
 
+
+  //styling
+  const buttonStyling = {
+    zIndex: 12, 
+    position: 'relative', 
+    border: 'solid 1px white',
+    padding: 5,
+    backgroundColor: 'greynpm',
+    margin: 5
+  }
 
   return (
     <Fragment>
@@ -84,7 +118,7 @@ const Upload = () => {
             </div>
           </div>
           <div>
-            <button style={{zIndex: 12, position: 'relative', border: 'solid 1px white', padding: 5}} 
+            <button style={buttonStyling} 
             onClick={handleUploadS3}>S3 Upload</button>
           </div>
         </div>
