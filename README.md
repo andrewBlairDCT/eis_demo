@@ -1,3 +1,9 @@
+# EIS Demo
+
+This demo site includes [an upload page](http://localhost:3000/upload) which allows the user to upload image files to an S3 bucket. When uploaded data will also be sent across to an API endpoint in [this Django app](https://github.com/andrewBlairDCT/django_s3objects) - so you will need to clone the Django app and run that as well to ensure the upload function works.
+
+## Next JS Stuff
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
